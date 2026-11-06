@@ -627,7 +627,7 @@ export const settingsMetadata = {
 		label: 'Notify the mining gateway of new blocks',
 		bitcoinLabel: 'datum',
 		description:
-			'Tell the Datum (BLAKE2b) Companion app as soon as this node accepts a new block, so it stops handing your miner work built on the previous one. Harmless if that app is not installed.',
+			'Tell the DATUM CONVOY and Datum (BLAKE2b) Companion apps as soon as this node accepts a new block, so they stop handing your miner work built on the previous one. Harmless if neither app is installed.',
 		default: true,
 	},
 
