@@ -166,7 +166,10 @@ function generateBaseConfLines(settings: SettingsSchema): string[] {
 			// published on the host.
 			case 'datum': {
 				if (value === true) {
-					lines.push('blocknotify=curl -s -m 5 http://paulscode-datum-blake2b_gateway_1:7152/NOTIFY')
+					// Kilombino's build: bitcoind runs this through the shell, so both
+					// gateways hear of each block; the one not installed fails in a
+					// moment on its name lookup.
+					lines.push('blocknotify=curl -s -m 5 http://kilombino-datum-convoy_gateway_1:7152/NOTIFY; curl -s -m 5 http://paulscode-datum-blake2b_gateway_1:7152/NOTIFY')
 				}
 				// Upstream is missing this break, so `datum` falls through to the
 				// default arm and `datum=1` is written into bitcoin.conf.

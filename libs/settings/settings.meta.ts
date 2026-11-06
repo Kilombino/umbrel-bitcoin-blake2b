@@ -333,12 +333,9 @@ export const settingsMetadata = {
 		// target size in MiB
 		// using GB and a step of 1 means users will never select between 1 MiB or <550 MiB behaviours described above
 		//
-		// Pruned by default here, where upstream keeps everything. This node is
-		// meant to run beside a node on the other chain, and two full copies of a
-		// chain this size do not fit on the machines it is for. 5 GB is
-		// comfortably above bitcoind's 550 MiB floor and small enough that
-		// "pruned" means what a reader expects.
-		default: 5,
+		// Kilombino's build: a full node by default, as upstream and the official
+		// Bitcoin Knots app keep everything. Pruning stays one setting away.
+		default: 0,
 		step: 1,
 		min: 0,
 		unit: 'GB',
